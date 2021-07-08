@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #5638c2;
+  color: white;
+  display: -ms-grid;
+  display: grid;
+  grid: "header header header header" auto "......  list  active ......" auto/1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+}
+
+.title {
+  grid-area: header;
+  text-align: center;
+  color: rgba(252, 250, 250, 0.5);
+  letter-spacing: 2px;
+  font-size: 3em;
+}
+
+.all-list {
+  grid-area: list;
+  margin-top: 30px;
+}
+
+.all-list .task-list-title {
+  margin-bottom: 20px;
+}
+
+.all-list .task-list {
+  padding: 0px 0px 0px 10px;
+  list-style: none;
+  line-height: 2;
+}
+
+.all-list .task-list .active-list {
+  font-weight: 700;
+  color: #00f3e7;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+form .btn {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-right: 0.5rem;
+  -webkit-transition: opacity 250ms ease-in;
+  transition: opacity 250ms ease-in;
+}
+
+form .btn:hover {
+  opacity: 0.7;
+}
+
+.btn.delete {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  -webkit-transition: opacity 250ms ease-in;
+  transition: opacity 250ms ease-in;
+}
+
+.btn.delete:hover {
+  opacity: 0.7;
+}
+
+.new {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  outline: none;
+  -webkit-transition: border-bottom 150ms ease-in;
+  transition: border-bottom 150ms ease-in;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.new::-webkit-input-placeholder {
+  font-size: 1rem;
+}
+
+.new:-ms-input-placeholder {
+  font-size: 1rem;
+}
+
+.new::-ms-input-placeholder {
+  font-size: 1rem;
+}
+
+.new::placeholder {
+  font-size: 1rem;
+}
+
+.new.list::-webkit-input-placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+.new.list:-ms-input-placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+.new.list::-ms-input-placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+.new.list::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+.new:focus {
+  border-bottom-width: 2px;
+}
+
+.new:focus::-webkit-input-placeholder {
+  opacity: 0.2;
+}
+
+.new:focus:-ms-input-placeholder {
+  opacity: 0.2;
+}
+
+.new:focus::-ms-input-placeholder {
+  opacity: 0.2;
+}
+
+.new:focus::placeholder {
+  opacity: 0.2;
+}
+
+.todo-list {
+  border-radius: 10px;
+  margin-top: 30px;
+  grid-area: active;
+  font-size: 1.5rem;
+  background-color: white;
+  color: black;
+}
+
+.todo-list .todo-header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem;
+  background-color: #d4d4d4;
+}
+
+.todo-list .todo-header .task-count {
+  font-size: 1rem;
+  margin-top: 30px;
+}
+
+.todo-list .todo-body {
+  padding: 2rem;
+}
+
+.todo-list .todo-body .task {
+  position: relative;
+  margin-bottom: 1.25em;
+}
+
+.todo-list .todo-body .task::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -50%;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.1;
+}
+
+.new-task-creater .crete {
+  color: #5638c2;
+}
+
+[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+
+.custom {
+  display: inline-block;
+  width: 0.75em;
+  height: 0.75em;
+  cursor: pointer;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: tranform 200ms ease-in-out;
+  transition: tranform 200ms ease-in-out;
+}
+
+.task:hover .custom,
+[type="checkbox"]:focus + label .custom {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: #5638c2;
+}
+
+[type="checkbox"]:checked + label .custom {
+  background-color: #5638c2;
+  border-color: #5638c2;
+  -webkit-box-shadow: inset 0 0 0 2px white;
+          box-shadow: inset 0 0 0 2px white;
+}
+
+[type="checkbox"]:checked + label {
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+  opacity: 0.5;
+}
+
+.deletestuff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: relative;
+  bottom: -60px;
+  color: white;
+}
+
+.deletestuff .delete {
+  opacity: 0.7;
+  font-size: 1rem;
+}
+
+.deletestuff .delete:hover {
+  opacity: 0.5;
+}
+/*# sourceMappingURL=sty.css.map */

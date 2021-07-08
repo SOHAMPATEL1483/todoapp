@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do app</title>
+    <link rel="stylesheet" href="./sty.css">
+</head>
+<body>
+    <h1 class="title">Hey , Human</h1>
+    
+        
+    <div class="all-list">
+        <h2 class="task-list-title">
+            My Lists
+        </h2>
+        <ul class="task-list">
+            <li class=" list-name active-list">youtube</li>
+            <li class="list-name">grocery</li>
+            <li class="list-name">work</li>
+        </ul>
+        <form action="">
+            <input 
+            type="text"
+            class="new list"
+            placeholder="new  list name"
+            aria-label="new list name "
+            />
+            <button class="btn crete" aria-label="create new list">+</button>
+            
+        </form>
+    </div>
+    <div class="todo-list">
+        <div class="todo-header">
+            <h2 class="list-title">youtube</h2>
+            <p class="task-count">
+                2 tasks remaining
+            </p>
+        </div>
+        <div class="todo-body">
+            <div class="tasks">
+                <!-- task1 -->
+                <div class="task">
+                    <input type="checkbox" class="task1" id="task1">
+                    <label for="task1" class="customcheackbox">
+                        <span class="custom"></span>
+                        record video</label>
+                </div>
+                <!-- task2 -->
+                <div class="task">
+                    <input type="checkbox" class="task2" id="task2">
+                    <label for="task2" class="customcheackbox">
+                        <span class="custom"></span>
+                        record video</label>
+                </div>
+                <!-- task3 -->
+                <div class="task">
+                    <input type="checkbox" class="task3" id="task3">
+                    <label for="task3" class="customcheackbox">
+                        <span class="custom"></span>
+                        record video</label>
+                </div>
+            </div>
+            <div class="new-task-creater">
+                <form action="">
+                        <input 
+                        type="text"
+                        class="new tak"
+                        placeholder="new  task name"
+                        aria-label="new task name "
+                        />
+                        <button class="btn crete" aria-label="create new task">+</button>
+                        
+                    </form>
+                </div>
+                <div class="deletestuff">
+                    <button class="btn delete">
+                        delete conpleted tasks
+                    </button>
+                    <button class="btn delete">
+                        delete list
+                    </button>
+                </div>
+        </div>
+        
+    </div>
+
+    
+    <script src="./function.js"></script>
+</body>
+</html>

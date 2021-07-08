@@ -1,0 +1,206 @@
+$primery : rgb(86, 56, 194);
+$secondary : rgb(255, 255, 255);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: $primery;
+    color: $secondary;
+    display: grid;
+    grid: 
+    "header header header header" auto
+    "......  list  active ......" auto /
+    1fr minmax(100px , 300px) minmax(250px , 500px) 1fr;
+}
+
+.title{
+    grid-area: header;
+    text-align: center;
+    color: rgba(252, 250, 250, 0.5);
+    letter-spacing: 2px;
+    font-size: 3em;
+
+}
+
+.all-list{
+        grid-area: list;
+        margin-top: 30px;
+        .task-list-title{
+            margin-bottom: 20px;
+        }
+        
+        .task-list{
+            padding: 0px 0px 0px 10px;
+            list-style: none;
+            line-height: 2;
+            .active-list{
+                font-weight: 700;
+                color: #00f3e7;
+            }
+            
+        }
+       
+       
+}
+form{
+    display: flex;
+    .btn{
+        cursor: pointer;
+        background: 0;
+        border: 0;
+        padding: 0;
+        color: inherit;
+         font-size: 1.25rem;
+         font-weight: 800;
+         margin-right: 0.5rem;
+         transition: opacity 250ms ease-in;
+         &:hover{
+             opacity: 0.7;
+         }
+        
+    }
+   
+}
+.btn.delete{
+    cursor: pointer;
+    background: 0;
+    border: 0;
+    padding: 0;
+    color: inherit;
+    
+     transition: opacity 250ms ease-in;
+     &:hover{
+         opacity: 0.7;
+     }
+    
+}
+
+.new{
+    background: transparent;
+    border: 0;
+    color: inherit;
+    font-size: inherit;
+    border-bottom: 1px solid currentColor;
+    outline: none;
+    transition: border-bottom 150ms ease-in;
+    order: 2;
+    &::placeholder{
+        
+        font-size: 1rem;
+
+    }
+}
+.new.list{
+    &::placeholder{
+        color: $secondary;
+        opacity: 0.5;
+    }
+}
+.new:focus{
+    border-bottom-width: 2px;
+    &::placeholder{
+        opacity: 0.2;
+    }
+}
+
+.todo-list{
+    border-radius: 10px;
+    margin-top: 30px;
+    grid-area: active;
+    font-size: 1.5rem;
+    background-color: white;
+    color: black;
+    .todo-header{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        display: flex ;
+        justify-content: space-between;
+        align-items: center;
+        .task-count{
+            font-size: 1rem;
+            margin-top: 30px;
+        }
+        padding: 2rem;
+        background-color: rgb(212, 212, 212);
+    }
+    .todo-body{
+        padding: 2rem;
+        .task{
+    
+            position: relative;
+            margin-bottom: 1.25em;
+            &::after{
+                content: "";
+                position: absolute;
+                right: 0;
+                left: 0;
+                bottom: -50%;
+                height: 2px;
+                background: currentColor;
+                opacity: 0.1;
+            }
+            
+
+        }
+        
+       
+       
+    }
+}
+.new-task-creater .crete{
+    color: $primery;
+}   
+[type="checkbox"]{
+    
+    opacity: 0;
+    position: absolute;
+}
+.custom{
+    
+    $pass : 0.75em;
+    display: inline-block;
+    width: $pass;
+    height: $pass;
+    cursor: pointer;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: tranform 200ms ease-in-out;
+    
+    
+}
+.task:hover .custom ,
+[type="checkbox"]:focus + label .custom{
+    transform: scale(1.1);
+    color: $primery;
+}
+[type="checkbox"]:checked + label .custom{
+    background-color: $primery;
+    border-color: $primery;
+    box-shadow:inset 0 0 0 2px white;
+}
+
+[type="checkbox"]:checked + label{
+
+    text-decoration-line: line-through;
+    opacity: 0.5;
+    
+}
+.deletestuff{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    bottom: -60px;
+    color: white;
+    .delete{
+        opacity: 0.7;
+        font-size: 1rem;
+        &:hover{
+            opacity: 0.5;
+        }
+    }
+}
+
